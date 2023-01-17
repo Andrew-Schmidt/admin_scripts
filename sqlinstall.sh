@@ -7,13 +7,8 @@ sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubunt
 sudo apt-get update
 #install the package from the repo
 sudo apt-get install -y mssql-server
-#deciding where to go now
-cho = read -p "do you want to set up now or later"
-
-if [ $cho -eq "now" ]
-	then
-		sudo /opt/mssql/bin/mssql-conf setup
-	else
-		echo "to set up later enter this command:  sudo /opt/mssql/bin/mssql-conf setup"
 #verify the status of the package
 systemctl status mssql-server --no-pager
+#run the setup
+sudo /opt/mssql/bin/mssql-conf setup
+
