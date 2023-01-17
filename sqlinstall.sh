@@ -10,7 +10,7 @@ sudo apt-get install -y mssql-server
 #deciding where to go now
 cho = read -p "do you want to set up now or later"
 
-if [ cho -eq "now" ]
+if [ $cho -eq "now" ]
 	then
 		sudo /opt/mssql/bin/mssql-conf setup
 	else
